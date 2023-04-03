@@ -1,0 +1,173 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2009/11/mapping/cs">
+  <EntityContainerMapping StorageEntityContainer="Хранилище DiplomchikModelContainer" CdmEntityContainer="DiplomchikEntities">
+    <EntitySetMapping Name="ArhivStatusEmp">
+      <EntityTypeMapping TypeName="DiplomchikModel.ArhivStatusEmp">
+        <MappingFragment StoreEntitySet="ArhivStatusEmp">
+          <ScalarProperty Name="NameStatus" ColumnName="NameStatus" />
+          <ScalarProperty Name="ID_ArhivStatus" ColumnName="ID_ArhivStatus" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Client">
+      <EntityTypeMapping TypeName="DiplomchikModel.Client">
+        <MappingFragment StoreEntitySet="Client">
+          <ScalarProperty Name="PaymentPersonalAccountNumber" ColumnName="PaymentPersonalAccountNumber" />
+          <ScalarProperty Name="Id_clientType" ColumnName="Id_clientType" />
+          <ScalarProperty Name="DateOfBirth" ColumnName="DateOfBirth" />
+          <ScalarProperty Name="Pasport" ColumnName="Pasport" />
+          <ScalarProperty Name="Email" ColumnName="Email" />
+          <ScalarProperty Name="Telephone" ColumnName="Telephone" />
+          <ScalarProperty Name="Address" ColumnName="Address" />
+          <ScalarProperty Name="INN" ColumnName="INN" />
+          <ScalarProperty Name="FIO" ColumnName="FIO" />
+          <ScalarProperty Name="Name_company" ColumnName="Name_company" />
+          <ScalarProperty Name="ID_client" ColumnName="ID_client" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="ClientType">
+      <EntityTypeMapping TypeName="DiplomchikModel.ClientType">
+        <MappingFragment StoreEntitySet="ClientType">
+          <ScalarProperty Name="Type" ColumnName="Type" />
+          <ScalarProperty Name="ID_ClientType" ColumnName="ID_ClientType" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Contract">
+      <EntityTypeMapping TypeName="DiplomchikModel.Contract">
+        <MappingFragment StoreEntitySet="Contract">
+          <ScalarProperty Name="Id_order" ColumnName="Id_order" />
+          <ScalarProperty Name="DataTransaction" ColumnName="DataTransaction" />
+          <ScalarProperty Name="ID_contract" ColumnName="ID_contract" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="DISCOUN">
+      <EntityTypeMapping TypeName="DiplomchikModel.DISCOUN">
+        <MappingFragment StoreEntitySet="DISCOUN">
+          <ScalarProperty Name="NAME_DISC" ColumnName="NAME_DISC" />
+          <ScalarProperty Name="ID_DISCOUNTT" ColumnName="ID_DISCOUNTT" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Employee">
+      <EntityTypeMapping TypeName="DiplomchikModel.Employee">
+        <MappingFragment StoreEntitySet="Employee">
+          <ScalarProperty Name="Id_statusJob" ColumnName="Id_statusJob" />
+          <ScalarProperty Name="Password" ColumnName="Password" />
+          <ScalarProperty Name="Login" ColumnName="Login" />
+          <ScalarProperty Name="INN" ColumnName="INN" />
+          <ScalarProperty Name="Id_post" ColumnName="Id_post" />
+          <ScalarProperty Name="DateOfBirth" ColumnName="DateOfBirth" />
+          <ScalarProperty Name="Email" ColumnName="Email" />
+          <ScalarProperty Name="Telephon" ColumnName="Telephon" />
+          <ScalarProperty Name="Adress" ColumnName="Adress" />
+          <ScalarProperty Name="Pasport" ColumnName="Pasport" />
+          <ScalarProperty Name="FIO" ColumnName="FIO" />
+          <ScalarProperty Name="ID_employee" ColumnName="ID_employee" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Hiistoryy">
+      <EntityTypeMapping TypeName="DiplomchikModel.Hiistoryy">
+        <MappingFragment StoreEntitySet="Hiistoryy">
+          <ScalarProperty Name="DateEvent" ColumnName="DateEvent" />
+          <ScalarProperty Name="IdStatus" ColumnName="IdStatus" />
+          <ScalarProperty Name="Id_Employee" ColumnName="Id_Employee" />
+          <ScalarProperty Name="ID_Historyy" ColumnName="ID_Historyy" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Order">
+      <EntityTypeMapping TypeName="DiplomchikModel.Order">
+        <MappingFragment StoreEntitySet="Order">
+          <ScalarProperty Name="Id_orderStatus" ColumnName="Id_orderStatus" />
+          <ScalarProperty Name="Id_employee" ColumnName="Id_employee" />
+          <ScalarProperty Name="Id_paymentStatus" ColumnName="Id_paymentStatus" />
+          <ScalarProperty Name="Srok" ColumnName="Srok" />
+          <ScalarProperty Name="Date" ColumnName="Date" />
+          <ScalarProperty Name="Id_service" ColumnName="Id_service" />
+          <ScalarProperty Name="Id_client" ColumnName="Id_client" />
+          <ScalarProperty Name="ID_order" ColumnName="ID_order" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="orderStatus">
+      <EntityTypeMapping TypeName="DiplomchikModel.orderStatus">
+        <MappingFragment StoreEntitySet="orderStatus">
+          <ScalarProperty Name="NameOrderStatus" ColumnName="NameOrderStatus" />
+          <ScalarProperty Name="ID_OrderStatus" ColumnName="ID_OrderStatus" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="PaymentStatus">
+      <EntityTypeMapping TypeName="DiplomchikModel.PaymentStatus">
+        <MappingFragment StoreEntitySet="PaymentStatus">
+          <ScalarProperty Name="NamePaymentStatus" ColumnName="NamePaymentStatus" />
+          <ScalarProperty Name="ID_payment_status" ColumnName="ID_payment_status" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Post">
+      <EntityTypeMapping TypeName="DiplomchikModel.Post">
+        <MappingFragment StoreEntitySet="Post">
+          <ScalarProperty Name="Bet" ColumnName="Bet" />
+          <ScalarProperty Name="NamePost" ColumnName="NamePost" />
+          <ScalarProperty Name="ID_Post" ColumnName="ID_Post" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Service">
+      <EntityTypeMapping TypeName="DiplomchikModel.Service">
+        <MappingFragment StoreEntitySet="Service">
+          <ScalarProperty Name="Photo34" ColumnName="Photo34" />
+          <ScalarProperty Name="Description" ColumnName="Description" />
+          <ScalarProperty Name="Cost" ColumnName="Cost" />
+          <ScalarProperty Name="Id_discount" ColumnName="Id_discount" />
+          <ScalarProperty Name="NameService" ColumnName="NameService" />
+          <ScalarProperty Name="ID_service" ColumnName="ID_service" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Stages">
+      <EntityTypeMapping TypeName="DiplomchikModel.Stages">
+        <MappingFragment StoreEntitySet="Stages">
+          <ScalarProperty Name="NameStages" ColumnName="NameStages" />
+          <ScalarProperty Name="ID_stages" ColumnName="ID_stages" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="StagesDevelopment">
+      <EntityTypeMapping TypeName="DiplomchikModel.StagesDevelopment">
+        <MappingFragment StoreEntitySet="StagesDevelopment">
+          <ScalarProperty Name="Comments" ColumnName="Comments" />
+          <ScalarProperty Name="Id_status" ColumnName="Id_status" />
+          <ScalarProperty Name="Date" ColumnName="Date" />
+          <ScalarProperty Name="Id_stages" ColumnName="Id_stages" />
+          <ScalarProperty Name="Id_Order" ColumnName="Id_Order" />
+          <ScalarProperty Name="ID_StagesOfDevelopment" ColumnName="ID_StagesOfDevelopment" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="StatusHistory">
+      <EntityTypeMapping TypeName="DiplomchikModel.StatusHistory">
+        <MappingFragment StoreEntitySet="StatusHistory">
+          <ScalarProperty Name="Name" ColumnName="Name" />
+          <ScalarProperty Name="ID_Status" ColumnName="ID_Status" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="sysdiagrams">
+      <EntityTypeMapping TypeName="DiplomchikModel.sysdiagrams">
+        <MappingFragment StoreEntitySet="sysdiagrams">
+          <ScalarProperty Name="definition" ColumnName="definition" />
+          <ScalarProperty Name="version" ColumnName="version" />
+          <ScalarProperty Name="diagram_id" ColumnName="diagram_id" />
+          <ScalarProperty Name="principal_id" ColumnName="principal_id" />
+          <ScalarProperty Name="name" ColumnName="name" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+  </EntityContainerMapping>
+</Mapping>

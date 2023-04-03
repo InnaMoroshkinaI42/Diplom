@@ -1,0 +1,413 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Schema Namespace="Хранилище DiplomchikModel" Provider="System.Data.SqlClient" ProviderManifestToken="2012" Alias="Self" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
+  <EntityType Name="ArhivStatusEmp">
+    <Key>
+      <PropertyRef Name="ID_ArhivStatus" />
+    </Key>
+    <Property Name="ID_ArhivStatus" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="NameStatus" Type="nvarchar(max)" Nullable="false" />
+  </EntityType>
+  <EntityType Name="Client">
+    <Key>
+      <PropertyRef Name="ID_client" />
+    </Key>
+    <Property Name="ID_client" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="Name_company" Type="nvarchar(max)" />
+    <Property Name="FIO" Type="nvarchar(max)" Nullable="false" />
+    <Property Name="INN" Type="nvarchar(max)" Nullable="false" />
+    <Property Name="Address" Type="nvarchar(max)" Nullable="false" />
+    <Property Name="Telephone" Type="nvarchar" MaxLength="11" Nullable="false" />
+    <Property Name="Email" Type="nvarchar(max)" Nullable="false" />
+    <Property Name="Pasport" Type="nvarchar(max)" Nullable="false" />
+    <Property Name="DateOfBirth" Type="date" Nullable="false" />
+    <Property Name="Id_clientType" Type="int" Nullable="false" />
+    <Property Name="PaymentPersonalAccountNumber" Type="nvarchar" MaxLength="20" />
+  </EntityType>
+  <EntityType Name="ClientType">
+    <Key>
+      <PropertyRef Name="ID_ClientType" />
+    </Key>
+    <Property Name="ID_ClientType" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="Type" Type="nvarchar(max)" Nullable="false" />
+  </EntityType>
+  <EntityType Name="Contract">
+    <Key>
+      <PropertyRef Name="ID_contract" />
+    </Key>
+    <Property Name="ID_contract" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="DataTransaction" Type="date" Nullable="false" />
+    <Property Name="Id_order" Type="int" Nullable="false" />
+  </EntityType>
+  <EntityType Name="DISCOUN">
+    <Key>
+      <PropertyRef Name="ID_DISCOUNTT" />
+    </Key>
+    <Property Name="ID_DISCOUNTT" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="NAME_DISC" Type="int" Nullable="false" />
+  </EntityType>
+  <EntityType Name="Employee">
+    <Key>
+      <PropertyRef Name="ID_employee" />
+    </Key>
+    <Property Name="ID_employee" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="FIO" Type="nvarchar(max)" Nullable="false" />
+    <Property Name="Pasport" Type="nvarchar(max)" Nullable="false" />
+    <Property Name="Adress" Type="nvarchar(max)" Nullable="false" />
+    <Property Name="Telephon" Type="nvarchar" MaxLength="11" Nullable="false" />
+    <Property Name="Email" Type="nvarchar(max)" Nullable="false" />
+    <Property Name="DateOfBirth" Type="date" Nullable="false" />
+    <Property Name="Id_post" Type="int" Nullable="false" />
+    <Property Name="INN" Type="nvarchar(max)" Nullable="false" />
+    <Property Name="Login" Type="nvarchar(max)" Nullable="false" />
+    <Property Name="Password" Type="nvarchar(max)" Nullable="false" />
+    <Property Name="Id_statusJob" Type="int" Nullable="false" />
+  </EntityType>
+  <EntityType Name="Hiistoryy">
+    <Key>
+      <PropertyRef Name="ID_Historyy" />
+    </Key>
+    <Property Name="ID_Historyy" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="Id_Employee" Type="int" Nullable="false" />
+    <Property Name="IdStatus" Type="int" Nullable="false" />
+    <Property Name="DateEvent" Type="datetime" Nullable="false" />
+  </EntityType>
+  <EntityType Name="Order">
+    <Key>
+      <PropertyRef Name="ID_order" />
+    </Key>
+    <Property Name="ID_order" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="Id_client" Type="int" Nullable="false" />
+    <Property Name="Id_service" Type="int" Nullable="false" />
+    <Property Name="Date" Type="date" Nullable="false" />
+    <Property Name="Srok" Type="date" Nullable="false" />
+    <Property Name="Id_paymentStatus" Type="int" Nullable="false" />
+    <Property Name="Id_employee" Type="int" Nullable="false" />
+    <Property Name="Id_orderStatus" Type="int" Nullable="false" />
+  </EntityType>
+  <EntityType Name="orderStatus">
+    <Key>
+      <PropertyRef Name="ID_OrderStatus" />
+    </Key>
+    <Property Name="ID_OrderStatus" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="NameOrderStatus" Type="nvarchar(max)" Nullable="false" />
+  </EntityType>
+  <EntityType Name="PaymentStatus">
+    <Key>
+      <PropertyRef Name="ID_payment_status" />
+    </Key>
+    <Property Name="ID_payment_status" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="NamePaymentStatus" Type="nvarchar(max)" Nullable="false" />
+  </EntityType>
+  <EntityType Name="Post">
+    <Key>
+      <PropertyRef Name="ID_Post" />
+    </Key>
+    <Property Name="ID_Post" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="NamePost" Type="nvarchar(max)" Nullable="false" />
+    <Property Name="Bet" Type="nvarchar" MaxLength="50" Nullable="false" />
+  </EntityType>
+  <EntityType Name="Service">
+    <Key>
+      <PropertyRef Name="ID_service" />
+    </Key>
+    <Property Name="ID_service" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="NameService" Type="nvarchar(max)" Nullable="false" />
+    <Property Name="Id_discount" Type="int" />
+    <Property Name="Cost" Type="int" Nullable="false" />
+    <Property Name="Description" Type="nvarchar(max)" />
+    <Property Name="Photo34" Type="image" />
+  </EntityType>
+  <EntityType Name="Stages">
+    <Key>
+      <PropertyRef Name="ID_stages" />
+    </Key>
+    <Property Name="ID_stages" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="NameStages" Type="nvarchar(max)" Nullable="false" />
+  </EntityType>
+  <EntityType Name="StagesDevelopment">
+    <Key>
+      <PropertyRef Name="ID_StagesOfDevelopment" />
+    </Key>
+    <Property Name="ID_StagesOfDevelopment" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="Id_Order" Type="int" />
+    <Property Name="Id_stages" Type="int" />
+    <Property Name="Date" Type="date" />
+    <Property Name="Id_status" Type="int" />
+    <Property Name="Comments" Type="nvarchar(max)" />
+  </EntityType>
+  <EntityType Name="StatusHistory">
+    <Key>
+      <PropertyRef Name="ID_Status" />
+    </Key>
+    <Property Name="ID_Status" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="Name" Type="nvarchar(max)" Nullable="false" />
+  </EntityType>
+  <EntityType Name="sysdiagrams">
+    <Key>
+      <PropertyRef Name="diagram_id" />
+    </Key>
+    <Property Name="name" Type="nvarchar" MaxLength="128" Nullable="false" />
+    <Property Name="principal_id" Type="int" Nullable="false" />
+    <Property Name="diagram_id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="version" Type="int" />
+    <Property Name="definition" Type="varbinary(max)" />
+  </EntityType>
+  <Association Name="FK_Client_ClientType">
+    <End Role="ClientType" Type="Self.ClientType" Multiplicity="1" />
+    <End Role="Client" Type="Self.Client" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="ClientType">
+        <PropertyRef Name="ID_ClientType" />
+      </Principal>
+      <Dependent Role="Client">
+        <PropertyRef Name="Id_clientType" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_Contract_Order">
+    <End Role="Order" Type="Self.Order" Multiplicity="1" />
+    <End Role="Contract" Type="Self.Contract" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Order">
+        <PropertyRef Name="ID_order" />
+      </Principal>
+      <Dependent Role="Contract">
+        <PropertyRef Name="Id_order" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_Employee_ArhivStatusEmp">
+    <End Role="ArhivStatusEmp" Type="Self.ArhivStatusEmp" Multiplicity="1" />
+    <End Role="Employee" Type="Self.Employee" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="ArhivStatusEmp">
+        <PropertyRef Name="ID_ArhivStatus" />
+      </Principal>
+      <Dependent Role="Employee">
+        <PropertyRef Name="Id_statusJob" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_Employee_Post">
+    <End Role="Post" Type="Self.Post" Multiplicity="1" />
+    <End Role="Employee" Type="Self.Employee" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Post">
+        <PropertyRef Name="ID_Post" />
+      </Principal>
+      <Dependent Role="Employee">
+        <PropertyRef Name="Id_post" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_Hiistoryy_Employee">
+    <End Role="Employee" Type="Self.Employee" Multiplicity="1" />
+    <End Role="Hiistoryy" Type="Self.Hiistoryy" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Employee">
+        <PropertyRef Name="ID_employee" />
+      </Principal>
+      <Dependent Role="Hiistoryy">
+        <PropertyRef Name="Id_Employee" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_Hiistoryy_StatusHistory">
+    <End Role="StatusHistory" Type="Self.StatusHistory" Multiplicity="1" />
+    <End Role="Hiistoryy" Type="Self.Hiistoryy" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="StatusHistory">
+        <PropertyRef Name="ID_Status" />
+      </Principal>
+      <Dependent Role="Hiistoryy">
+        <PropertyRef Name="IdStatus" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_Order_Client">
+    <End Role="Client" Type="Self.Client" Multiplicity="1" />
+    <End Role="Order" Type="Self.Order" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Client">
+        <PropertyRef Name="ID_client" />
+      </Principal>
+      <Dependent Role="Order">
+        <PropertyRef Name="Id_client" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_Order_Employee">
+    <End Role="Employee" Type="Self.Employee" Multiplicity="1" />
+    <End Role="Order" Type="Self.Order" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Employee">
+        <PropertyRef Name="ID_employee" />
+      </Principal>
+      <Dependent Role="Order">
+        <PropertyRef Name="Id_employee" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_Order_orderStatus">
+    <End Role="orderStatus" Type="Self.orderStatus" Multiplicity="1" />
+    <End Role="Order" Type="Self.Order" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="orderStatus">
+        <PropertyRef Name="ID_OrderStatus" />
+      </Principal>
+      <Dependent Role="Order">
+        <PropertyRef Name="Id_orderStatus" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_Order_PaymentStatus">
+    <End Role="PaymentStatus" Type="Self.PaymentStatus" Multiplicity="1" />
+    <End Role="Order" Type="Self.Order" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="PaymentStatus">
+        <PropertyRef Name="ID_payment_status" />
+      </Principal>
+      <Dependent Role="Order">
+        <PropertyRef Name="Id_paymentStatus" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_Order_Service1">
+    <End Role="Service" Type="Self.Service" Multiplicity="1" />
+    <End Role="Order" Type="Self.Order" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Service">
+        <PropertyRef Name="ID_service" />
+      </Principal>
+      <Dependent Role="Order">
+        <PropertyRef Name="Id_service" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_Service_DISCOUN">
+    <End Role="DISCOUN" Type="Self.DISCOUN" Multiplicity="0..1" />
+    <End Role="Service" Type="Self.Service" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="DISCOUN">
+        <PropertyRef Name="ID_DISCOUNTT" />
+      </Principal>
+      <Dependent Role="Service">
+        <PropertyRef Name="Id_discount" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_StagesDevelopment_Order">
+    <End Role="Order" Type="Self.Order" Multiplicity="0..1" />
+    <End Role="StagesDevelopment" Type="Self.StagesDevelopment" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Order">
+        <PropertyRef Name="ID_order" />
+      </Principal>
+      <Dependent Role="StagesDevelopment">
+        <PropertyRef Name="Id_Order" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_StagesDevelopment_orderStatus1">
+    <End Role="orderStatus" Type="Self.orderStatus" Multiplicity="0..1" />
+    <End Role="StagesDevelopment" Type="Self.StagesDevelopment" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="orderStatus">
+        <PropertyRef Name="ID_OrderStatus" />
+      </Principal>
+      <Dependent Role="StagesDevelopment">
+        <PropertyRef Name="Id_status" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_StagesDevelopment_Stages">
+    <End Role="Stages" Type="Self.Stages" Multiplicity="0..1" />
+    <End Role="StagesDevelopment" Type="Self.StagesDevelopment" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Stages">
+        <PropertyRef Name="ID_stages" />
+      </Principal>
+      <Dependent Role="StagesDevelopment">
+        <PropertyRef Name="Id_stages" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <EntityContainer Name="Хранилище DiplomchikModelContainer">
+    <EntitySet Name="ArhivStatusEmp" EntityType="Self.ArhivStatusEmp" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="Client" EntityType="Self.Client" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="ClientType" EntityType="Self.ClientType" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="Contract" EntityType="Self.Contract" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="DISCOUN" EntityType="Self.DISCOUN" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="Employee" EntityType="Self.Employee" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="Hiistoryy" EntityType="Self.Hiistoryy" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="Order" EntityType="Self.Order" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="orderStatus" EntityType="Self.orderStatus" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="PaymentStatus" EntityType="Self.PaymentStatus" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="Post" EntityType="Self.Post" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="Service" EntityType="Self.Service" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="Stages" EntityType="Self.Stages" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="StagesDevelopment" EntityType="Self.StagesDevelopment" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="StatusHistory" EntityType="Self.StatusHistory" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="sysdiagrams" EntityType="Self.sysdiagrams" Schema="dbo" store:Type="Tables" />
+    <AssociationSet Name="FK_Client_ClientType" Association="Self.FK_Client_ClientType">
+      <End Role="ClientType" EntitySet="ClientType" />
+      <End Role="Client" EntitySet="Client" />
+    </AssociationSet>
+    <AssociationSet Name="FK_Contract_Order" Association="Self.FK_Contract_Order">
+      <End Role="Order" EntitySet="Order" />
+      <End Role="Contract" EntitySet="Contract" />
+    </AssociationSet>
+    <AssociationSet Name="FK_Employee_ArhivStatusEmp" Association="Self.FK_Employee_ArhivStatusEmp">
+      <End Role="ArhivStatusEmp" EntitySet="ArhivStatusEmp" />
+      <End Role="Employee" EntitySet="Employee" />
+    </AssociationSet>
+    <AssociationSet Name="FK_Employee_Post" Association="Self.FK_Employee_Post">
+      <End Role="Post" EntitySet="Post" />
+      <End Role="Employee" EntitySet="Employee" />
+    </AssociationSet>
+    <AssociationSet Name="FK_Hiistoryy_Employee" Association="Self.FK_Hiistoryy_Employee">
+      <End Role="Employee" EntitySet="Employee" />
+      <End Role="Hiistoryy" EntitySet="Hiistoryy" />
+    </AssociationSet>
+    <AssociationSet Name="FK_Hiistoryy_StatusHistory" Association="Self.FK_Hiistoryy_StatusHistory">
+      <End Role="StatusHistory" EntitySet="StatusHistory" />
+      <End Role="Hiistoryy" EntitySet="Hiistoryy" />
+    </AssociationSet>
+    <AssociationSet Name="FK_Order_Client" Association="Self.FK_Order_Client">
+      <End Role="Client" EntitySet="Client" />
+      <End Role="Order" EntitySet="Order" />
+    </AssociationSet>
+    <AssociationSet Name="FK_Order_Employee" Association="Self.FK_Order_Employee">
+      <End Role="Employee" EntitySet="Employee" />
+      <End Role="Order" EntitySet="Order" />
+    </AssociationSet>
+    <AssociationSet Name="FK_Order_orderStatus" Association="Self.FK_Order_orderStatus">
+      <End Role="orderStatus" EntitySet="orderStatus" />
+      <End Role="Order" EntitySet="Order" />
+    </AssociationSet>
+    <AssociationSet Name="FK_Order_PaymentStatus" Association="Self.FK_Order_PaymentStatus">
+      <End Role="PaymentStatus" EntitySet="PaymentStatus" />
+      <End Role="Order" EntitySet="Order" />
+    </AssociationSet>
+    <AssociationSet Name="FK_Order_Service1" Association="Self.FK_Order_Service1">
+      <End Role="Service" EntitySet="Service" />
+      <End Role="Order" EntitySet="Order" />
+    </AssociationSet>
+    <AssociationSet Name="FK_Service_DISCOUN" Association="Self.FK_Service_DISCOUN">
+      <End Role="DISCOUN" EntitySet="DISCOUN" />
+      <End Role="Service" EntitySet="Service" />
+    </AssociationSet>
+    <AssociationSet Name="FK_StagesDevelopment_Order" Association="Self.FK_StagesDevelopment_Order">
+      <End Role="Order" EntitySet="Order" />
+      <End Role="StagesDevelopment" EntitySet="StagesDevelopment" />
+    </AssociationSet>
+    <AssociationSet Name="FK_StagesDevelopment_orderStatus1" Association="Self.FK_StagesDevelopment_orderStatus1">
+      <End Role="orderStatus" EntitySet="orderStatus" />
+      <End Role="StagesDevelopment" EntitySet="StagesDevelopment" />
+    </AssociationSet>
+    <AssociationSet Name="FK_StagesDevelopment_Stages" Association="Self.FK_StagesDevelopment_Stages">
+      <End Role="Stages" EntitySet="Stages" />
+      <End Role="StagesDevelopment" EntitySet="StagesDevelopment" />
+    </AssociationSet>
+  </EntityContainer>
+</Schema>
